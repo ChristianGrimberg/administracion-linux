@@ -62,12 +62,13 @@
             </ul>
 
             <p>Dentro del archivo de configuración es importante que se configure primordialmente así:</p>
-            <pre>
-                <strong>Host</strong> [alias]
-                    <strong>HostName</strong> [ip address]
-                    <strong>Port</strong> 22
-                    <strong>User</strong> [username]
-                    <strong>IdentityFile</strong> ~/.ssh/[ssh-keyname].pub</pre>
+<pre>
+    <strong>Host</strong> [alias]
+        <strong>HostName</strong> [ip address]
+        <strong>Port</strong> 22
+        <strong>User</strong> [username]
+        <strong>IdentityFile</strong> ~/.ssh/[ssh-keyname].pub
+</pre>
 
             <p><strong>VIM es un fork de VI</strong> y viene de manera predeterminada en muchos servidores, en caso de necesitar instalarlo basta con ejecutar (por ejemplo, en Debian/Ubuntu): <strong>apt-get install vim</strong>.</p>
             <!-- Lista desordenada -->
@@ -102,13 +103,21 @@
             <!-- Lista desordenada -->
             <ul>
                 <li><strong>Empaquetar:</strong> Tomar varios archivos y hacer de ellos uno solo.</li>
-                <pre><strong>tar</strong> cvf [directorio de salida] [carpeta a empaquetar]</pre>
+<pre>
+    <strong>tar</strong> cvf [directorio de salida] [carpeta a empaquetar]
+</pre>
                 <li><strong>Comprimir:</strong> Tomar un archivo y reducir su tamaño por medio de diferentes algoritmos (si quieres saber como funciona la compresión de un archivo dale click <a href="https://platzi.com/clases/ingenieria/concepto/archivos-y-estructuras-de-datos/como-funciona-zip-arboles-binarios/material/" target="_blank">aquí</a>) de esta forma se genera finalmente un archivo con un menor tamaño.</li>
-                <pre><strong>gzip</strong> -9r [archivo a comprimir]</pre>
+<pre>
+    <strong>gzip</strong> -9r [archivo a comprimir]
+</pre>
                 <li>Para <strong>empaquetar</strong> y <strong>comprimir</strong> al mismo tiempo: Es importante conocer que la <strong>c</strong> requiere crear el archivo, la <strong>v</strong> solicita la información detallada y <strong>f</strong> toma un argumento que establece el nombre del archivo a operar. En esta caso la <strong>z</strong> se utiliza para comprimir.</li>
-                <pre><strong>tar c</strong>vf<strong>z</strong> archivo.tar.gz [carpeta para comprimir]</pre>
+<pre>
+    <strong>tar c</strong>vf<strong>z</strong> archivo.tar.gz [carpeta para comprimir]
+</pre>
                 <li>Para <strong>desempaquetar</strong> y <strong>descomprimir</strong> al mismo tiempo: En este caso el parámetros que cambia (la <strong>c</strong> por la <strong>x</strong>) significa; "extraer un archivo".</li>
-                <pre><strong>tar x</strong>vf<strong>z</strong> archivo.tar.gz</pre>
+<pre>
+    <strong>tar x</strong>vf<strong>z</strong> archivo.tar.gz
+</pre>
             </ul>
 
             <p>En cada distribución de <strong>Linux</strong> se encuentra un directorio donde esta toda la documentación de cada paquete instalado. En Ubuntu se encuentra en <strong>/usr/share/doc</strong>.</p>
@@ -139,24 +148,25 @@
             <!-- Lista desordenada -->
             <ul>
                 <li><strong><kbd>fdisk -l</kbd></strong> Muestra los discos y las particiones que existen. A continuación se muestra que existen 2 discos duros (la práctica la hice en VirtualBox) y su respectivas particiones.</li>
-                <pre>
-                    <strong>Disk /dev/sda: 10 GiB, 10737418240 bytes, 20971520 sectors</strong>
-                    Units: sectors of 1 * 512 = 512 bytes
-                    Sector size (logical/physical): 512 bytes / 512 bytes
-                    I/O size (minimum/optimal): 512 bytes / 512 bytes
-                    Disklabel type: dos
-                    Disk identifier: 0x83cdfcea
+<pre>
+    <strong>Disk /dev/sda: 10 GiB, 10737418240 bytes, 20971520 sectors</strong>
+    Units: sectors of 1 * 512 = 512 bytes
+    Sector size (logical/physical): 512 bytes / 512 bytes
+    I/O size (minimum/optimal): 512 bytes / 512 bytes
+    Disklabel type: dos
+    Disk identifier: 0x83cdfcea
 
-                    <strong>Device     Boot    Start      End  Sectors  Size Id Type</strong>
-                    /dev/sda1  *        2048 19922943 19920896  9.5G 83 Linux
-                    /dev/sda2       19924990 20969471  1044482  510M  5 Extended
-                    /dev/sda5       19924992 20969471  1044480  510M 82 Linux swap / Solar
+    <strong>Device     Boot    Start      End  Sectors  Size Id Type</strong>
+    /dev/sda1  *        2048 19922943 19920896  9.5G 83 Linux
+    /dev/sda2       19924990 20969471  1044482  510M  5 Extended
+    /dev/sda5       19924992 20969471  1044480  510M 82 Linux swap / Solar
 
 
-                    <strong>Disk /dev/sdb: 4 GiB, 4294967296 bytes, 8388608 sectors</strong>
-                    Units: sectors of 1 * 512 = 512 bytes
-                    Sector size (logical/physical): 512 bytes / 512 bytes
-                    I/O size (minimum/optimal): 512 bytes / 512 bytes</pre>
+    <strong>Disk /dev/sdb: 4 GiB, 4294967296 bytes, 8388608 sectors</strong>
+    Units: sectors of 1 * 512 = 512 bytes
+    Sector size (logical/physical): 512 bytes / 512 bytes
+    I/O size (minimum/optimal): 512 bytes / 512 bytes
+</pre>
                 <li><strong><kbd>fdisk /dev/[disco duro]</kbd></strong> Selecciona el disco duro en el cual se harán las particiones (en este caso en de 4GB).</li>
                 <p><strong><kbd>m</kbd></strong> Con esta opción se listan los diferentes comandos del programa.</p>
                 <p><strong><kbd>p</kbd></strong> Con esta opción se muestra la forma en el que se encuentra particionado el disco duro. En este caso no tiene nada.</p>
@@ -273,9 +283,13 @@
             <p>Las variables de entorno permiten configurar diferentes ambientes, sea de desarrollo o de producción, estas también guardan llaves de seguridad.</p>
             <ul>
                 <li>¿Como configurar una variable de entorno?</li>
-                <pre><strong>PLATZI</strong>="https://platzi.com"</pre>
+<pre>
+    <strong>PLATZI</strong>="https://platzi.com"
+</pre>
                 <li>¿Como imprimir una variable de entorno?</li>
-                <pre><strong>$</strong>PLATZI</pre>
+<pre>
+    <strong>$</strong>PLATZI
+</pre>
             </ul>
 
             <p>Los archivos <strong>.bashrc</strong> y <strong>.profile</strong> guardan configuraciones de la sesión como "alias" (variables de entorno).</p>
@@ -361,17 +375,19 @@
                 <li><strong><kbd>chmod 755 [archivo o directorio]</kbd></strong> Permite cambiar los permisos. Lectura (read) tiene un valor de 4, escritura (write) un valor de 2 y ejecución (execution) un valor de 1, la sumatoria entre todos esos da 7, es lo mismo que decir: <strong><kbd>chmod o+rwx [archivo]</kbd></strong>.</li>
                 <li><strong><kbd>chmod u=rwx,g=,o= [archivo o directorio]</kbd></strong> Permite cambiar los permisos. Usuario tiene permiso de lectura, escritura y ejecución, el grupo no tiene ningún permiso y los otros usuarios tampoco.</li>
             </ul>
-            <pre>
-                <strong>4</strong> Lectura
-                <strong>2</strong> Escritura
-                <strong>1</strong> Ejecución</pre>
-            <pre>
-                <strong>➜  platzi_administracion-linux</strong> git:(master) ✗ ls -l
-                total 44
-                -rwxrwxrwx 1 root root     0 Oct  6 22:50 <strong>archivo</strong>
-                drwxrwxrwx 1 root root  4096 Oct  4 15:06 <strong>assets</strong>
-                -rwxrwxrwx 1 root root 36236 Oct  6 22:50 <strong>index.html</strong>
-                -rwxrwxrwx 1 root root   735 Oct  4 15:06 <strong>README.md</strong></pre>
+<pre>
+    <strong>4</strong> Lectura
+    <strong>2</strong> Escritura
+    <strong>1</strong> Ejecución
+</pre>
+<pre>
+    <strong>➜  administracion-linux</strong> git:(master) ✗ ls -l
+    total 44
+    -rwxrwxrwx 1 root root     0 Oct  6 22:50 <strong>archivo</strong>
+    drwxrwxrwx 1 root root  4096 Oct  4 15:06 <strong>assets</strong>
+    -rwxrwxrwx 1 root root 36236 Oct  6 22:50 <strong>index.html</strong>
+    -rwxrwxrwx 1 root root   735 Oct  4 15:06 <strong>README.md</strong>
+</pre>
 
             <p>El área de permisos esta definida como <strong>-rwxrwxrwx</strong>. La primera letra o carácter define si es un archivo o directorio, las siguientes 3 letras representan los permisos del usuario, las otras 3 representan los permisos del grupo y las ultimas 3 representan los permisos de todos los demás usuarios.</p>
             <!-- Lista desordenada -->
@@ -397,8 +413,6 @@
 
             <p><strong>NTP</strong> es un servicio que permite sincronizar la hora. El comando para instalarlo es: <strong><kbd>apt-get install ntp</kbd></strong></p>
         </section>
-
-        <p>Me alegra que hayas llegado hasta este punto, quiero recordarte que estaré haciendo más guiás de los cursos que este realizando. Pasate por mi cuenta de <a href="https://github.com/JoaquinAraujo" target="_blank">GitHub</a> allí estaré creando los repositorios de las guías y en ellos dejaré su respectivo enlace.</p>
     </div>
 
     <!-- Pie de página -->
